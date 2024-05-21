@@ -24,7 +24,8 @@ resource "tls_cert_request" "ica" {
 resource "tls_locally_signed_cert" "ica" {
   allowed_uses = [
     "cert_signing",
-    "crl_signing"
+    "crl_signing",
+    "digital_signature",
   ]
   is_ca_certificate  = true
   ca_cert_pem        = var.ca.cert
